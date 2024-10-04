@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 12:12:21 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/04 18:52:15 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/10/04 21:08:33 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,36 @@ Phonebook::~Phonebook(void)
 	return;
 }
 
+void	Phonebook::erase_contact(void)
+{
+	c[current].first_name.assign("");
+	c[current].last_name.assign("");
+	c[current].nickname.assign("");
+	c[current].phone_number.assign("");
+	c[current].darkest_secret.assign("");
+}
+
+void	Phonebook::check_fields()
+{
+	if (c[current].first_name.empty()
+		|| c[current].last_name.empty()
+		|| c[current].nickname.empty()
+		|| c[current].phone_number.empty()
+		|| c[current].darkest_secret.empty())
+		erase_contact();
+	else
+	{
+		current++;
+		if (nb_contacts != 8)
+			nb_contacts++;
+	}
+		
+}
+
 void	Phonebook::add()
 {
 	if (current == 8)
 		current = 0;
-	if (nb_contacts != 8)
-		nb_contacts++;
 	std::cout << "first name: ";
 	std::getline(std::cin, c[current].first_name);
 	std::cout << "last name: ";
@@ -41,8 +65,18 @@ void	Phonebook::add()
 	std::getline(std::cin, c[current].phone_number);
 	std::cout << "darkest secret: ";
 	std::getline(std::cin, c[current].darkest_secret);
-	current++;
+	Phonebook::check_fields();
 };
+
+std::string	reduce_strings(std::string str)
+{
+	std::string	print;
+
+	print = str.substr(0, 10);
+	if (str.size() > 10)
+		print.replace(9, 1, ".");
+	return (print);
+}
 
 void	Phonebook::print_all_contacts(void)
 {
@@ -50,13 +84,18 @@ void	Phonebook::print_all_contacts(void)
 	
 	while (i != nb_contacts)
 	{
+		std::cout << std::setw(10);
 		std::cout << i + 1;
-		std::cout << " | ";
-		std::cout << c[i].first_name;
-		std::cout << " | ";
-		std::cout << c[i].last_name;
-		std::cout << " | ";
-		std::cout << c[i].nickname;
+		std::cout << "|";
+		std::cout << std::setw(10);
+		std::cout << reduce_strings(c[i].first_name);
+		std::cout << "|";
+		std::cout << std::setw(10);
+		std::cout << reduce_strings(c[i].last_name);
+		std::cout << "|";
+		std::cout << std::setw(10);
+		std::cout << reduce_strings(c[i].nickname);
+		std::cout << "|";
 		std::cout << std::endl;
 		i++;
 	}
@@ -82,7 +121,6 @@ void	Phonebook::print_one_contact(void)
 
 void	Phonebook::search()
 {
-
 	print_all_contacts();
 	print_one_contact();
 }

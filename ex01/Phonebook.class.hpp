@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 12:03:47 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/04 17:32:51 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/10/04 21:03:56 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@ public:
 	
 	Phonebook(void);
 	~Phonebook(void);
-	
+
 	void	add(void);
 	void	search(void);
 	void	print_all_contacts(void);
 	void	print_one_contact(void);
+	void	check_fields(void);
+	void	erase_contact(void);
 };
 
 #endif

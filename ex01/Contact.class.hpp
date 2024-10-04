@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 12:26:39 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/03 11:05:37 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/10/04 17:16:48 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <sstream>
 
 class	Contact
 {
-	private:
-	
-
 	public:
 
 		std::string first_name;

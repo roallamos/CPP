@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 12:15:31 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/04 12:47:21 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/10/05 17:32:21 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(void)
 	
 	while (input != "EXIT")
 	{
+		std::cout << "INSERT COMMAND (ADD, SEARCH, EXIT): ";
 		std::getline(std::cin, input);
 		if (input == "ADD")
 			contact_list.add();

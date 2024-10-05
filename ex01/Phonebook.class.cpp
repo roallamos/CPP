@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 12:12:21 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/04 21:08:33 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/10/05 17:38:12 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Phonebook::Phonebook(void)
 
 Phonebook::~Phonebook(void)
 {
-	std::cout << "Phonebook destructor has been called" << std::endl;
 	return;
 }
 
@@ -107,6 +106,7 @@ void	Phonebook::print_one_contact(void)
 	int			to_compare;
 	std::string	str;
 	
+	std::cout << "select a contact: ";
 	std::getline(std::cin, str);
 	std::istringstream(str) >> to_compare;
 	if (to_compare >= 1 && to_compare <= nb_contacts)
@@ -117,10 +117,15 @@ void	Phonebook::print_one_contact(void)
 		std::cout << "phone number: " + c[to_compare - 1].phone_number << std::endl;
 		std::cout << "darkest secret: " + c[to_compare - 1].darkest_secret << std::endl;
 	}
+	else
+		std::cout << str + " is not a valid contact" << std::endl;
 }
 
 void	Phonebook::search()
 {
 	print_all_contacts();
-	print_one_contact();
+	if (nb_contacts != 0)
+		print_one_contact();
+	else
+		std::cout << "no contacts added" << std::endl;
 }

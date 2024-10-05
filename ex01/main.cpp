@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 12:15:31 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/05 17:32:21 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/10/05 17:46:12 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(void)
 	Phonebook	contact_list;
 	std::string	input;
 	
-	while (input != "EXIT")
+	while (input != "EXIT" && !std::cin.eof())
 	{
 		std::cout << "INSERT COMMAND (ADD, SEARCH, EXIT): ";
 		std::getline(std::cin, input);
@@ -26,5 +26,6 @@ int	main(void)
 		else if (input == "SEARCH")
 			contact_list.search();
 	}
+	std::cout << "closing phonebook..." << std::endl;
 	return (0);
 }

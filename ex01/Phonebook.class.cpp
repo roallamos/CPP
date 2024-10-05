@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 12:12:21 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/05 17:38:12 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/10/05 20:16:47 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,24 @@ void	Phonebook::add()
 		current = 0;
 	std::cout << "first name: ";
 	std::getline(std::cin, c[current].first_name);
+	if (std::cin.eof())
+		return ;
 	std::cout << "last name: ";
 	std::getline(std::cin, c[current].last_name);
+	if (std::cin.eof())
+		return ;
 	std::cout << "nickname: ";
 	std::getline(std::cin, c[current].nickname);
+	if (std::cin.eof())
+		return ;
 	std::cout << "phone number: ";
 	std::getline(std::cin, c[current].phone_number);
+	if (std::cin.eof())
+		return ;
 	std::cout << "darkest secret: ";
 	std::getline(std::cin, c[current].darkest_secret);
+	if (std::cin.eof())
+		return ;
 	Phonebook::check_fields();
 };
 
@@ -108,6 +118,8 @@ void	Phonebook::print_one_contact(void)
 	
 	std::cout << "select a contact: ";
 	std::getline(std::cin, str);
+	if (std::cin.eof())
+		return ;
 	std::istringstream(str) >> to_compare;
 	if (to_compare >= 1 && to_compare <= nb_contacts)
 	{

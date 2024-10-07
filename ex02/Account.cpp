@@ -1,11 +1,25 @@
 #include "Account.hpp"
 #include <iostream>
+#include <ctime>
 
 	int	Account::_nbAccounts = 0;
 	int	Account::_totalAmount = 0;
 	int	Account::_totalNbDeposits = 0;
 	int	Account::_totalNbWithdrawals = 0;
 
+void    timestamp(void)
+{
+    time_t t ;
+    struct tm *tmp ;
+    char MY_TIME[50];
+
+    time( &t );
+    tmp = localtime( &t );
+    strftime(MY_TIME, sizeof(MY_TIME), "%Y", tmp);
+    std::cout << "[" << MY_TIME << tmp->tm_mon;
+    std::cout << tmp->tm_mday << "_" << tmp->tm_hour;
+    std::cout << tmp->tm_min << tmp->tm_sec << "] ";
+}
 Account::Account(int initial_deposit)
 {
     t::_accountIndex = t::_nbAccounts;
@@ -14,6 +28,7 @@ Account::Account(int initial_deposit)
     t::_totalAmount += t::_amount;
     t::_nbDeposits = 0;
     t::_nbWithdrawals = 0;
+    timestamp();
     std::cout << "index:" << t::_accountIndex;
     std::cout << ";amount:" << t::_amount;
     std::cout << ";created"  << std::endl;
@@ -41,6 +56,7 @@ int	Account::getNbAccounts( void )
 
 void Account::displayAccountsInfos(void)
 {
+    timestamp();
     std::cout << "account:" << t::getNbAccounts();
     std::cout << ";total:" << t::getTotalAmount();
     std::cout << ";deposits:" << t::getNbDeposits();
@@ -48,6 +64,7 @@ void Account::displayAccountsInfos(void)
 }
 void	Account::displayStatus( void )  const
 {
+    timestamp();
     std::cout << "index:" << _accountIndex;
     std::cout << ";amount:" << _amount;
     std::cout << ";deposits:" << _nbDeposits;
@@ -59,6 +76,7 @@ void	Account::makeDeposit( int deposit )
     t::_totalAmount += deposit;
     t::_nbDeposits++;
     t::_totalNbDeposits++;
+    timestamp();
     std::cout << "index:" << _accountIndex;
     std::cout << ";p_amount:" << _amount;
     t::_amount += deposit;
@@ -74,6 +92,7 @@ int		Account::checkAmount( void ) const
 
 bool	Account::makeWithdrawal( int withdrawal )
 {
+    timestamp();
     std::cout << "index:" << _accountIndex;
     std::cout << ";p_amount:" << _amount;
     if (checkAmount() < withdrawal)
@@ -95,6 +114,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 
 Account::~Account()
 {
+    timestamp();
     std::cout << "index:" << t::_accountIndex;
     std::cout << ";amount:" << t::_amount;
     std::cout << ";closed"  << std::endl;

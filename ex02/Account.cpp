@@ -58,15 +58,45 @@ void	Account::makeDeposit( int deposit )
 {
     t::_totalAmount += deposit;
     t::_nbDeposits++;
+    t::_totalNbDeposits++;
     std::cout << "index:" << _accountIndex;
     std::cout << ";p_amount:" << _amount;
     t::_amount += deposit;
     std::cout << ";deposit:" << deposit;
     std::cout << ";amount:" << _amount;
-    std::cout << ";nb_deposits:" << _nbWithdrawals << std::endl;
+    std::cout << ";nb_deposits:" << _nbDeposits << std::endl;
+}
+
+int		Account::checkAmount( void ) const
+{
+    return (_amount);
+}
+
+bool	Account::makeWithdrawal( int withdrawal )
+{
+    std::cout << "index:" << _accountIndex;
+    std::cout << ";p_amount:" << _amount;
+    if (checkAmount() < withdrawal)
+    {
+        std::cout << ";withdrawal:refused" << std::endl;
+        return (0);
+    }
+    else
+    {
+        t::_totalAmount -= withdrawal;
+        t::_amount -= withdrawal;
+        t::_nbWithdrawals++;
+        t::_totalNbWithdrawals++;
+        std::cout << ";withdawal:" << withdrawal << ";amount:" << _amount;
+        std::cout << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
+        return (1);
+    }
 }
 
 Account::~Account()
 {
+    std::cout << "index:" << t::_accountIndex;
+    std::cout << ";amount:" << t::_amount;
+    std::cout << ";closed"  << std::endl;
     return ;
 }

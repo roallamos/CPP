@@ -1,4 +1,4 @@
-NAME = ptr_ref
+NAME = violence
 
 CC = g++
 
@@ -8,7 +8,7 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 ARFLAGS  = -rcs
 
-SOURCES = main.cpp
+SOURCES = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:27:35 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/08 14:05:53 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/10/13 13:01:30 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,9 @@ public:
     void    announce( void );
     void    set_name( std::string );
 };
+
+Zombie  *newZombie(std::string name);
+void    randomChump(std::string name);
+Zombie *zombieHorde( int N, std::string name );
 
 #endif

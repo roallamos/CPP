@@ -6,57 +6,59 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 12:20:52 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/14 17:32:26 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/10/14 20:34:36 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "replace.hpp"
-/*void   create_outfile(char *argv[])
-{
-    std::string         name;
-    std::ofstream       outfile;
-    
-    name.append(argv[1]);
-    name.append(".replace");
-    outfile.open(name.c_str());
-}*/
 
-static std::string  replace_in_str(std::string str, std::string s1, std::string s2)
+replacer::replacer(std::string s1,std::string s2)
 {
-    size_t              pos;
-    unsigned long int   start;
-    std::string         str_replace;
-    std::string        sub_str;
-
-    
-    pos = 0;
-    start = str.find(s1);
-    while (start != (unsigned long int) -1)
-    {
-        sub_str = str.substr(pos, start - pos);
-        str_replace.append(sub_str); 
-        str_replace.append(s2);
-        pos = start + s1.length();
-        start = str.find(s1, start + 1);
-    }
-    return (str_replace);
+    replacer::s1 = s1;
+    replacer::s2 = s2;
 }
 
-void    replace(char *argv[], std::string str, std::string s1, std::string s2)
+replacer::~replacer()
 {
+}
 
-    std::ofstream       outfile;
-    std::string         new_str;
-    std::string         name;
-    
-    name.append(argv[1]);
-    name.append(".replace");
-    outfile.open(name.c_str());
-    if (outfile.is_open())
+void    replacer::Setfilename(std::string name)
+{
+    replacer::file_name = name + ".replace";
+}
+
+const std::string    replacer::GetFilename()
+{
+    return (file_name);
+}
+
+std::string    replacer::GetS1()
+{
+    return (replacer::s1);
+}
+
+std::string    replacer::GetS2()
+{
+    return (replacer::s2);
+}
+
+void  replacer::replace(std::string str)
+{
+    unsigned long int   start;
+    std::ofstream       out_file;
+
+    start = str.find(s1);
+    out_file.open(file_name.c_str());
+    if (out_file.is_open())
     {
-        new_str = replace_in_str(str, s1, s2);
-        outfile << new_str;
-        outfile.close();
+        while (start != (unsigned long int) -1)
+        {
+            str.erase(start, s1.length());
+            str.insert(start, s2);
+            start = str.find(s1);
+        }
+        out_file << str;
+        out_file.close();
     }
 }
 

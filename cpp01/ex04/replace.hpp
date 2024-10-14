@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 12:21:01 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/14 12:59:29 by rodralva         ###   ########.fr       */
+/*   Created: 2024/10/14 12:20:59 by rodralva          #+#    #+#             */
+/*   Updated: 2024/10/14 13:02:10 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "replace.hpp"
+#ifndef REPLACE_HPP
+# define REPLACE_HPP
 
-int main(int argc, char *argv[])
-{   
-    std::ofstream       outfile;
-    std::string         str;
+# include <iostream>
+# include <fstream>
 
-    if (argc != 4)
-        return (0);
-    outfile = create_outfile(argv);
-    str = read_file(argv);
-    replace(argv, str, outfile);
-    return (0);
-}
+std::ofstream   create_outfile(char *argv[]);
+void            replace(char *argv[], std::string str, std::ofstream outfile);
+std::string     read_file(char *argv[]);
+
+#endif

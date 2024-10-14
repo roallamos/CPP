@@ -8,7 +8,7 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 ARFLAGS  = -rcs
 
-SOURCES = main.cpp
+SOURCES = main.cpp replace.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
 

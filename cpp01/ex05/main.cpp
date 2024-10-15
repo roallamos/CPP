@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 12:21:17 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/14 12:21:18 by rodralva         ###   ########.fr       */
+/*   Created: 2024/10/15 10:43:16 by rodralva          #+#    #+#             */
+/*   Updated: 2024/10/15 14:59:14 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#include "Harl.hpp"
 
-HumanB::HumanB(std::string name): name(name)
+int main(void)
 {
-}
-
-HumanB::~HumanB()
-{
-}
-
-void    HumanB::attack()
-{
-    std::cout << name << " attacks whith their weapon " 
-                    << weapon_b.getType() << std::endl;
-}
-
-void    HumanB::setWeapon(Weapon Weapon_b)
-{
-    this->weapon_b = Weapon_b;
+    Harl    billie;
+    
+    billie.complain("DEBUG");
+    billie.complain("INFO");
+    billie.complain("WARNING");
+    billie.complain("ERROR");
+    billie.complain("");
+    return (0);
 }

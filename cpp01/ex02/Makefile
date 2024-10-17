@@ -1,6 +1,6 @@
 NAME = ptr_ref
 
-CC = g++
+CC = c++
 
 AR = ar
 

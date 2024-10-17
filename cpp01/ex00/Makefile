@@ -1,6 +1,6 @@
 NAME = Zombiee
 
-CC = g++
+CC = c++
 
 AR = ar
 

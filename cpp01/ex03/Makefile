@@ -1,6 +1,6 @@
 NAME = violence
 
-CC = g++
+CC = c++
 
 AR = ar
 

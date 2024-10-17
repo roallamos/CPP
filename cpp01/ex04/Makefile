@@ -1,6 +1,6 @@
 NAME = program
 
-CC = g++
+CC = c++
 
 AR = ar
 

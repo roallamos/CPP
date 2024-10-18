@@ -1,4 +1,4 @@
-NAME = Zombiee
+NAME = Fixed
 
 CC = c++
 

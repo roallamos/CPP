@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 12:15:31 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/07 16:03:11 by rodralva         ###   ########.fr       */
+/*   Created: 2024/09/25 12:03:47 by rodralva          #+#    #+#             */
+/*   Updated: 2024/10/08 12:05:14 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-int	main(void)
+#include  "Contact.hpp"
+
+class	Phonebook
 {
-	Phonebook	contact_list;
-	std::string	input;
+private:
+	int	current;
+	int	nb_contacts;
+ 	Contact c[8];
+public:
 	
-	while (input != "EXIT" && !std::cin.eof())
-	{
-		std::cout << "INSERT COMMAND (ADD, SEARCH, EXIT): ";
-		std::getline(std::cin, input);
-		if (input == "ADD")
-			contact_list.add();
-		else if (input == "SEARCH")
-			contact_list.search();
-	}
-	std::cout << "closing phonebook..." << std::endl;
-	return (0);
-}
+	Phonebook(void);
+	~Phonebook(void);
+
+	void	add(void);
+	void	search(void);
+	void	print_all_contacts(void);
+	void	print_one_contact(void);
+	void	check_fields(void);
+	void	erase_contact(void);
+};
+
+#endif

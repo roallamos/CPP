@@ -1,6 +1,6 @@
-NAME = phonebook
+NAME = Zombiee
 
-CC = g++
+CC = c++
 
 AR = ar
 
@@ -8,7 +8,7 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 ARFLAGS  = -rcs
 
-SOURCES = Phonebook.cpp Contact.cpp main.cpp
+SOURCES = main.cpp Fixed.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
 

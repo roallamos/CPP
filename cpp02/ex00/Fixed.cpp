@@ -1,23 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.cpp                                  :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 12:29:02 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/05 17:25:42 by rodralva         ###   ########.fr       */
+/*   Created: 2024/10/18 10:56:25 by rodralva          #+#    #+#             */
+/*   Updated: 2024/10/18 13:03:57 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.class.hpp"
+#include "Fixed.hpp"
 
-Contact::Contact(void)
+Fixed::Fixed()
 {
-	return ;
+    this->nb_value = 0;
 }
 
-Contact::~Contact(void)
+Fixed::Fixed(Fixed &copy)
 {
-	return ;
+    this->nb_value = copy.nb_value;
+}
+
+Fixed& Fixed::operator=(Fixed &copy)
+{
+    this->nb_value = copy.getRawBits();
+    return (*this);
+}
+
+int Fixed::getRawBits() const
+{
+    return (this->nb_value);
+}
+
+void Fixed::setRawBits( int const raw )
+{
+    this->nb_value = raw;
+}
+
+Fixed::~Fixed()
+{
 }

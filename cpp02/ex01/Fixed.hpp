@@ -14,18 +14,19 @@
 # define FIXED_HPP
 
 # include <iostream>
+# include <math.h> 
 
 class Fixed
 {
 private:
     int                 nb_value;
-    static const int    bits = 8;
+    static const int    bits;
 public:
     Fixed();
-    Fixed( Fixed & );
+    Fixed( const Fixed & );
     Fixed( const int );
     Fixed( const float );
-    Fixed& operator=(Fixed &copy);
+    Fixed& operator=(const Fixed &copy);
     ~Fixed();
     int getRawBits( void ) const;
     void setRawBits( int const raw );
@@ -33,7 +34,7 @@ public:
     int toInt( void ) const;
 };
 
-    std::ostream &operator<<( std::ostream, Fixed &);
+    std::ostream &operator<<( std::ostream &, const Fixed &);
 #endif
 
 

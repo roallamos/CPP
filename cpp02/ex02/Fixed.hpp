@@ -47,10 +47,10 @@ public:
     Fixed operator++(int);
     Fixed operator--(int);
 
-    Fixed &min(Fixed &, Fixed &);
-    Fixed &max(Fixed &, Fixed &);
-    const Fixed &min(const Fixed &, const Fixed &);
-    const Fixed &max(const Fixed &, const Fixed &);
+    static Fixed &min(Fixed &, Fixed &);
+    static Fixed &max(Fixed &, Fixed &);
+    static const Fixed &min(const Fixed &, const Fixed &);
+    static const Fixed &max(const Fixed &, const Fixed &);
 
     
 };

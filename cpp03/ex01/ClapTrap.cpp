@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 17:56:37 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/20 19:51:08 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/10/23 15:16:50 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ClapTrap::ClapTrap(std::string name) : name(name), hp(10), energy(10), ad(0)
     std::cout << "ClapTrap string constructor called\n";
 }
 
-ClapTrap::ClapTrap(ClapTrap &copy) : name(copy.name), hp(copy.hp), energy(copy.energy), ad(copy.ad)
+ClapTrap::ClapTrap(const ClapTrap &copy) : name(copy.name), hp(copy.hp), energy(copy.energy), ad(copy.ad)
 {
     std::cout << "ClapTrap copy constructor called\n";
 }

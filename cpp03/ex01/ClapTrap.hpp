@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 17:56:39 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/20 19:35:05 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/10/23 19:08:31 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ protected:
     unsigned int         ad;
 public:
     ClapTrap();
-    ClapTrap(ClapTrap &);
+    ClapTrap(const ClapTrap &copy);
     ClapTrap(std::string);
     ClapTrap &operator=(const ClapTrap &);
     ~ClapTrap();
     std::string    getName() const;
     int     getAd() const;
-    void    attack(const std::string &target);
+    virtual void    attack(const std::string &target);
     void    takeDamage(unsigned int amount);
     void    beRepaired(unsigned int amount);
 };

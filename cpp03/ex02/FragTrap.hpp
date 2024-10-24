@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 19:21:53 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/23 19:29:21 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/10/24 16:19:47 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ public:
     ~FragTrap();
 
     void    highFivesGuys();
-    void    attack(const std::string &target);
 };
 
 

@@ -6,15 +6,14 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 10:56:25 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/18 13:03:57 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/10/23 15:25:03 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed()
+Fixed::Fixed(): nb_value(0)
 {
-    this->nb_value = 0;
 }
 
 Fixed::Fixed(Fixed &copy)

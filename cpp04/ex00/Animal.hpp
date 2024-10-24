@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:13:30 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/24 19:43:54 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/10/24 19:53:59 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ public:
     Animal(const Animal &copy);
     Animal &operator=(const Animal &copy);
     ~Animal();
+    std::string getType();
     void    makeSound();
 };
 

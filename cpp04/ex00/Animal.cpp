@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:15:17 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/24 19:45:09 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/10/24 19:54:27 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ Animal &Animal::operator=(const Animal &copy)
 {
     this->_type = copy._type;
     return (*this);
+}
+
+std::string Animal::getType()
+{
+    return (this->_type);
 }
 
 void    Animal::makeSound()

@@ -43,7 +43,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &copy)
 {
     if (this != &copy)
     {
-        this->name = copy.name;
+        this->_name = copy.name;
         this->hp = copy.hp;
         this->energy = copy.energy;
         this->ad = copy.ad;
@@ -58,7 +58,7 @@ DiamondTrap::~DiamondTrap()
 
 void    DiamondTrap::whoAmI()
 {
-    std::cout << this->name << " wondering who he is\n";
+    std::cout << "DiamondTap -> "<<this->_name << "\nClapTap -> "<< ClapTrap::name << std::endl;
 }
 
 /*void    DiamondTrap::attack(const std::string &target)

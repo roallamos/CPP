@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 17:56:42 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/24 16:34:19 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/10/24 19:04:27 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int main(void)
     d.attack("perro");
     d.guardGate();
     d.highFivesGuys();
+    d.whoAmI();
     return (0);
 }

@@ -8,7 +8,7 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 ARFLAGS  = -rcs
 
-SOURCES = main.cpp Animal.cpp Cat.cpp Dog.cpp
+SOURCES = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
 

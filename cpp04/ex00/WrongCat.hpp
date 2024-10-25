@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 19:47:16 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/25 11:28:46 by rodralva         ###   ########.fr       */
+/*   Created: 2024/10/24 19:25:20 by rodralva          #+#    #+#             */
+/*   Updated: 2024/10/25 11:28:18 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongCat.hpp"
+#ifndef WRONGCAT_HPP
+# define CAT_HPP
 
-int main()
+# include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
 {
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-const WrongAnimal* k = new WrongCat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-j->makeSound();
-meta->makeSound();
-k->makeSound();
-return 0;
-}
+public:
+    WrongCat();
+    WrongCat(const WrongCat &copy);
+    WrongCat &operator=(const WrongCat &copy);
+    ~WrongCat();
+    void    makeSound() const;
+};
+
+#endif

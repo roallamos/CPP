@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:25:20 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/24 19:46:10 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/10/25 11:11:54 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
     Cat(const Cat &copy);
     Cat &operator=(const Cat &copy);
     ~Cat();
-    void    makeSound();
+    void    makeSound() const;
 };
 
 #endif

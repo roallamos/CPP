@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:24:50 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/24 19:49:15 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/10/25 11:12:03 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Dog &Dog::operator=(const Dog &copy)
     return (*this);
 }
 
-void   Dog::makeSound()
+void   Dog::makeSound() const
 {
     std::cout << this->_type << ": Guau\n";
 }

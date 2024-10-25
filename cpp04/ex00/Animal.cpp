@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:15:17 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/24 19:54:27 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/10/25 11:05:45 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ Animal &Animal::operator=(const Animal &copy)
     return (*this);
 }
 
-std::string Animal::getType()
+std::string Animal::getType() const
 {
     return (this->_type);
 }
 
-void    Animal::makeSound()
+void    Animal::makeSound() const
 {
     std::cout << this->_type << ": ...\n";
 }

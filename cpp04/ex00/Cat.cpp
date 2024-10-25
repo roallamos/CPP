@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:25:14 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/24 19:46:54 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/10/25 11:12:07 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Cat &Cat::operator=(const Cat &copy)
     return (*this);
 }
 
-void    Cat::makeSound()
+void    Cat::makeSound() const
 {
     std::cout << this->_type << ": Miau\n";
 }

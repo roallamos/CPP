@@ -1,6 +1,6 @@
 NAME = Test
 
-CC = g++
+CC = c++
 
 AR = ar
 

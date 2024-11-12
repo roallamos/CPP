@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 19:13:30 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/25 14:30:21 by rodralva         ###   ########.fr       */
+/*   Created: 2024/10/24 19:15:17 by rodralva          #+#    #+#             */
+/*   Updated: 2024/10/25 11:05:45 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#include "Brain.hpp"
 
-# include <iostream>
-
-class Animal
+Brain::Brain()
 {
-protected:
-    std::string _type;
-public:
-    Animal();
-    Animal(const Animal &copy);
-    Animal &operator=(const Animal &copy);
-    virtual ~Animal();
-    std::string getType() const;
-    virtual void    makeSound() const;
-};
+    std::cout << "Brain standar constructor called\n";
+}
 
-#endif
+Brain::~Brain()
+{
+    std::cout << "Brain destructor called\n";
+}
+
+Brain::Brain(const Brain &copy)
+{
+    std::cout << "Brain copy constructor called\n";
+    (*this) = copy;
+}
+
+Brain &Brain::operator=(const Brain &copy)
+{
+    for (int i = 0; i < 100; i++)
+        this->_ideas[i] = copy._ideas[i];
+    return (*this);
+}

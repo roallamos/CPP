@@ -1,6 +1,6 @@
-NAME = phonebook
+NAME = test
 
-CC = c++
+CC = g++
 
 AR = ar
 
@@ -8,7 +8,7 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 ARFLAGS  = -rcs
 
-SOURCES = Phonebook.cpp Contact.cpp main.cpp
+SOURCES = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
@@ -29,3 +29,4 @@ all: ${NAME}
 re: fclean all
 
 .PHONY: all clean fclean re
+

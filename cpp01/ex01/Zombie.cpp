@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:27:47 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/08 14:17:05 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/11/17 11:40:27 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 Zombie::Zombie( void )
 {
+    std::cout << "standar zombie constructor called\n";
 }
 
 Zombie::Zombie(std::string name)
 {
     Zombie::name = name;
+    std::cout << Zombie::name << ": has been created" << std::endl;
 }
 
 Zombie::~Zombie()

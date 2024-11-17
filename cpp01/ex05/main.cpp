@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:43:16 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/15 14:59:14 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/11/17 15:38:22 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int main(void)
 {
-    Harl    billie;
+    Harl    complainer;
     
-    billie.complain("DEBUG");
-    billie.complain("INFO");
-    billie.complain("WARNING");
-    billie.complain("ERROR");
-    billie.complain("");
+    complainer.complain("DEBUG");
+    complainer.complain("INFO");
+    complainer.complain("WARNING");
+    complainer.complain("ERROR");
+    complainer.complain("");
     return (0);
 }

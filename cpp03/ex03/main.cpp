@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 17:56:42 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/24 19:04:27 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/12/13 18:00:41 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 int main(void)
 {
-    /*ScavTrap a("perro");
+    ScavTrap a("araña");
     ClapTrap b("gato");
-    FragTrap c("perro");*/
+    FragTrap c("rata");
     DiamondTrap d("perro");
 
-    /*a.attack(b.getName());
+    a.attack(b.getName());
     b.takeDamage(a.getAd());
     b.beRepaired(10);
     a.takeDamage(100);
     a.attack(b.getName());
     c.attack(a.getName());
     a.takeDamage(c.getAd());
-    c.highFivesGuys();*/
-    d.attack("perro");
+    c.highFivesGuys();
+    d.attack("rata");
     d.guardGate();
     d.highFivesGuys();
     d.whoAmI();

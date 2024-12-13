@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 19:21:50 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/24 16:20:07 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/12/13 17:57:23 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,21 @@
 
 FragTrap::FragTrap() : ClapTrap()
 {
-    this->hp = 100;
-    this->energy = 100;
-    this->ad = 30;
+    ClapTrap::setHp(100);
+    ClapTrap::setEnergy(100);
+    ClapTrap::setAd(30);
     std::cout << "FragTrap standar constructor called\n";
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-    this->hp = 100;
-    this->energy = 100;
-    this->ad = 30;
-        std::cout << "F" << FragTrap::name << " " <<  FragTrap::hp << " " << FragTrap::energy << " " <<  FragTrap::ad << std::endl;
+    ClapTrap::setHp(100);
+    ClapTrap::setEnergy(100);
+    ClapTrap::setAd(30);
     std::cout << "FragTrap string constructor called\n";
 }
 
-FragTrap::FragTrap(const FragTrap &copy) : ClapTrap()// revisar constructores de copia en erencias
+FragTrap::FragTrap(const FragTrap &copy) : ClapTrap()
 {
     std::cout << "FragTrap copy constructor called\n";
     *this = copy;
@@ -39,10 +38,10 @@ FragTrap &FragTrap::operator=(const FragTrap &copy)
 {
     if (this != &copy)
     {
-        this->name = copy.name;
-        this->hp = copy.hp;
-        this->energy = copy.energy;
-        this->ad = copy.ad;
+        ClapTrap::setName(copy.getName());
+        ClapTrap::setHp(copy.getHp());
+        ClapTrap::setEnergy(copy.getEnergy());
+        ClapTrap::setAd(copy.getAd());
     }
     return (*this);
 }
@@ -56,4 +55,3 @@ void    FragTrap::highFivesGuys()
 {
     std::cout << "FragTrap is asking for a highfive.\n";
 }
-

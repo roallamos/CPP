@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 17:56:37 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/23 15:16:50 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/12/13 16:53:27 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,37 @@ std::string    ClapTrap::getName() const
     return (this->name);
 }
 
-int   ClapTrap::getAd() const
+unsigned int   ClapTrap::getAd() const
 {
     return (this->ad);
+}
+
+unsigned int   ClapTrap::getHp() const
+{
+    return (this->hp);
+}
+
+unsigned int   ClapTrap::getEnergy() const
+{
+    return (this->energy);
+}
+
+void    ClapTrap::setName(std::string name)
+{
+    this->name = name;
+}
+
+void   ClapTrap::setAd(unsigned int ad)
+{
+    this->ad = ad;
+}
+
+void   ClapTrap::setHp(unsigned int hp)
+{
+    this->hp = hp;
+}
+
+void   ClapTrap::setEnergy(unsigned int energy)
+{
+    this->energy = energy;
 }

@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 19:21:50 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/24 16:34:54 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/12/13 17:59:19 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,21 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-    this->hp = 100;
-    this->energy = 50;
-    this->ad = 20;
+    ClapTrap::setHp(100);
+    ClapTrap::setEnergy(50);
+    ClapTrap::setAd(20);
     std::cout << "ScavTrap standar constructor called\n";
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    this->hp = 100;
-    this->energy = 50;
-    this->ad = 20;
-     std::cout << "S" << ScavTrap::name << " " <<  ScavTrap::hp << " " << ScavTrap::energy << " " <<  ScavTrap::ad << std::endl;
+    ClapTrap::setHp(100);
+    ClapTrap::setEnergy(50);
+    ClapTrap::setAd(20);
     std::cout << "ScavTrap string constructor called\n";
 }
 
-ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap()// revisar constructores de copia en herencias
+ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap()// revisar constructores de copia en erencias
 {
     std::cout << "ScavTrap copy constructor called\n";
     *this = copy;
@@ -39,10 +38,10 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &copy)
 {
     if (this != &copy)
     {
-        this->name = copy.name;
-        this->hp = copy.hp;
-        this->energy = copy.energy;
-        this->ad = copy.ad;
+        ClapTrap::setName(copy.getName());
+        ClapTrap::setHp(copy.getHp());
+        ClapTrap::setEnergy(copy.getEnergy());
+        ClapTrap::setAd(copy.getAd());
     }
     return (*this);
 }
@@ -54,19 +53,19 @@ ScavTrap::~ScavTrap()
 
 void    ScavTrap::guardGate()
 {
-    std::cout << "ScavTrap " << this->name <<" is now in Gate keeper mode.\n";
+    std::cout << "ScavTrap is now in Gate keeper mode.\n";
 }
 
 void    ScavTrap::attack(const std::string &target)
 {
-    if (this->energy > 0 && this->hp > 0)
+    if (ClapTrap::getEnergy() > 0 && ClapTrap::getHp() > 0)
     {
-        this->energy -= 1;
+        ClapTrap::setEnergy(ClapTrap::getEnergy() - 1);
         std::cout << "ScavTrap "
-        << this->name << " attacks "
+        << ClapTrap::getName() << " attacks "
         << target << ", causing "
-        << this->ad << " points of damage!" << std::endl;
+        << ClapTrap::getAd() << " points of damage!" << std::endl;
     }
     else
-        std::cout << this->name << " can not attack" << std::endl;
+        std::cout << ClapTrap::getName() << " can not attack" << std::endl;
 }

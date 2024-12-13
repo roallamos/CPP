@@ -12,23 +12,15 @@
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap() 
 {
-    this->hp = FragTrap::hp;
-    this->energy = ScavTrap::energy;
-    this->ad = FragTrap::ad;
+    setEnergy(50);
     std::cout << "DiamondTrap standar constructor called\n";
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + " clap_name"), ScavTrap(name + " clap_name"), FragTrap(name + " clap_name"), _name(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + " clap_name"), _name(name)
 {
-    std::cout << "C" << ClapTrap::name << " " <<  ClapTrap::hp << " " << ClapTrap::energy << " " <<  ClapTrap::ad << std::endl;
-    std::cout << "F" << FragTrap::name << " " <<  FragTrap::hp << " " << FragTrap::energy << " " <<  FragTrap::ad << std::endl;
-    std::cout << "S" << ScavTrap::name << " " <<  ScavTrap::hp << " " << ScavTrap::energy << " " <<  ScavTrap::ad << std::endl;
-    this->hp = FragTrap::hp;
-    this->energy = ScavTrap::energy;
-    this->ad = FragTrap::ad;
-    std::cout << this->_name << " " <<  this->hp << " " << this->energy << " " <<  FragTrap::ad << std::endl;
+    setEnergy(50);
     std::cout << "DiamondTrap string constructor called\n";
 }
 
@@ -43,10 +35,10 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &copy)
 {
     if (this != &copy)
     {
-        this->_name = copy.name;
-        this->hp = copy.hp;
-        this->energy = copy.energy;
-        this->ad = copy.ad;
+        setName(copy.getName());
+        setEnergy(copy.getEnergy());
+        setAd(copy.getAd());
+        setHp(copy.getHp());
     }
     return (*this);
 }
@@ -58,19 +50,10 @@ DiamondTrap::~DiamondTrap()
 
 void    DiamondTrap::whoAmI()
 {
-    std::cout << "DiamondTap -> "<<this->_name << "\nClapTap -> "<< ClapTrap::name << std::endl;
+    std::cout << "DiamondTap -> "<<this->_name << "\nClapTap -> "<< ClapTrap::getName() << std::endl;
 }
 
-/*void    DiamondTrap::attack(const std::string &target)
+void    DiamondTrap::attack(const std::string &target)
 {
-    if (this->energy > 0 && this->hp > 0)
-    {
-        this->energy -= 1;
-        std::cout << "DiamondTrap "
-        << this->name << " attacks "
-        << target << ", causing "
-        << this->ad << " points of damage!" << std::endl;
-    }
-    else
-        std::cout << this->name << " can not attack" << std::endl;
-}*/
+    ScavTrap::attack(target);
+}

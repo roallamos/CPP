@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 19:21:50 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/23 19:09:30 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/12/13 17:47:32 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-    this->hp = 100;
-    this->energy = 50;
-    this->ad = 20;
+    ClapTrap::setHp(100);
+    ClapTrap::setEnergy(50);
+    ClapTrap::setAd(20);
     std::cout << "ScavTrap standar constructor called\n";
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    this->hp = 100;
-    this->energy = 50;
-    this->ad = 20;
+    ClapTrap::setHp(100);
+    ClapTrap::setEnergy(50);
+    ClapTrap::setAd(20);
     std::cout << "ScavTrap string constructor called\n";
 }
 
@@ -38,10 +38,10 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &copy)
 {
     if (this != &copy)
     {
-        this->name = copy.name;
-        this->hp = copy.hp;
-        this->energy = copy.energy;
-        this->ad = copy.ad;
+        ClapTrap::setName(copy.getName());
+        ClapTrap::setHp(copy.getHp());
+        ClapTrap::setEnergy(copy.getEnergy());
+        ClapTrap::setAd(copy.getAd());
     }
     return (*this);
 }
@@ -58,14 +58,14 @@ void    ScavTrap::guardGate()
 
 void    ScavTrap::attack(const std::string &target)
 {
-    if (this->energy > 0 && this->hp > 0)
+    if (ClapTrap::getEnergy() > 0 && ClapTrap::getHp() > 0)
     {
-        this->energy -= 1;
+        ClapTrap::setEnergy(ClapTrap::getEnergy() - 1);
         std::cout << "ScavTrap "
-        << this->name << " attacks "
+        << ClapTrap::getName() << " attacks "
         << target << ", causing "
-        << this->ad << " points of damage!" << std::endl;
+        << ClapTrap::getAd() << " points of damage!" << std::endl;
     }
     else
-        std::cout << this->name << " can not attack" << std::endl;
+        std::cout << ClapTrap::getName() << " can not attack" << std::endl;
 }

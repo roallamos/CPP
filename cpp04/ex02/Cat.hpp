@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:25:20 by rodralva          #+#    #+#             */
-/*   Updated: 2024/12/16 15:56:50 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:39:18 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
     Cat();
     Cat(const Cat &copy);
     Cat &operator=(const Cat &copy);
-    ~Cat();
+    virtual ~Cat();
 
     void    setIdeas(std::string idea);
     void    printIdeas();    

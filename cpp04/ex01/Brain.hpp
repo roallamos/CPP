@@ -24,6 +24,8 @@ public:
     Brain(const Brain &copy);
     Brain &operator=(const Brain &copy);
     ~Brain();
+    void setIdeas(std::string idea);
+    void printIdeas() const;
 };
 
 #endif

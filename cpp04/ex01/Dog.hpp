@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:25:05 by rodralva          #+#    #+#             */
-/*   Updated: 2024/10/25 11:57:15 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/12/16 15:57:13 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ public:
     Dog(const Dog &copy);
     Dog &operator=(const Dog &copy);
     ~Dog();
+
+    void    setIdeas(std::string idea);
+    void    printIdeas();    
     void    makeSound() const;
 };
 

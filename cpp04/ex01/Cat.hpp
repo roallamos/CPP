@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:25:20 by rodralva          #+#    #+#             */
-/*   Updated: 2024/11/06 19:31:40 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/12/16 15:56:50 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ public:
     Cat(const Cat &copy);
     Cat &operator=(const Cat &copy);
     ~Cat();
+
+    void    setIdeas(std::string idea);
+    void    printIdeas();    
     void    makeSound() const;
 };
 

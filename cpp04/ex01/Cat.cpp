@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:25:14 by rodralva          #+#    #+#             */
-/*   Updated: 2024/12/16 16:20:23 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:34:42 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,18 @@ Cat::Cat(const Cat &copy) : Animal()
     (*this) = copy;
 }
 
-Cat &Cat::operator=(const Cat &copy)
+Cat& Cat::operator=(const Cat &copy)
 {
-    this->_type = copy._type;
-    delete this->_cat_Brain;
-    this->_cat_Brain = new Brain(*copy._cat_Brain);
-    return (*this);
+    if (this != &copy) 
+    {
+        Brain* newBrain = new Brain(*copy._cat_Brain); 
+        delete _cat_Brain;
+        _cat_Brain = newBrain;
+        _type = copy._type;
+    }
+    return *this;
 }
+
 
 void    Cat::makeSound() const
 {

@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:25:14 by rodralva          #+#    #+#             */
-/*   Updated: 2024/12/16 19:34:42 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:37:04 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Cat::~Cat()
     std::cout << "Cat destructor called\n";
 }
 
-Cat::Cat(const Cat &copy) : Animal()
+Cat::Cat(const Cat &copy) : Animal() , _cat_Brain(new Brain)
 {
     std::cout << "Cat copy constructor called\n";
     (*this) = copy;

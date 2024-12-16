@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:47:16 by rodralva          #+#    #+#             */
-/*   Updated: 2024/12/16 17:10:45 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:32:18 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ const Animal* meta = new Animal();
 const Animal* j = new Dog();
 const Animal* i = new Cat();
 Dog perro;
-Dog copy;
 
 perro.setIdeas("⚽");
+Dog copy(perro);
 copy = perro;
 std::cout << "--------ideas perro--------\n";
 perro.printIdeas();

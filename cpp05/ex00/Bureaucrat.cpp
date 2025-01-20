@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 15:31:27 by rodralva          #+#    #+#             */
-/*   Updated: 2025/01/20 18:41:04 by rodralva         ###   ########.fr       */
+/*   Updated: 2025/01/20 19:05:47 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ Bureaucrat::Bureaucrat( const Bureaucrat &copy)
 
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &copy)
 {
-	const_cast<std::string&>(this->name) = copy.name;
 	this->grade = copy.grade;
 	return (*this);
 }

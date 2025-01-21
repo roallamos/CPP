@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 15:31:27 by rodralva          #+#    #+#             */
-/*   Updated: 2025/01/20 19:36:38 by rodralva         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:39:52 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,19 @@ void	Bureaucrat::decreaseGrade()
 	if (this->getGrade() == 150)
 		throw(GradeTooHighException());
 	this->grade++;
+}
+
+void	Bureaucrat::signForm(Form &f)
+{
+	try
+	{
+		f.beSigned(*this);
+		std::cout << this->name <<  " signed " << f.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->name << " couldn’t sign " << f.getName() << " because " << e.what();
+	}
 }
 
 Bureaucrat::Bureaucrat(): name(""), grade(150)

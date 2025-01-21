@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 13:11:56 by rodralva          #+#    #+#             */
-/*   Updated: 2025/01/20 18:13:18 by rodralva         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:39:55 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
+# include "Form.hpp"
 
 class Bureaucrat
 {
@@ -41,6 +42,7 @@ public:
 
 	void	increaseGrade();
 	void	decreaseGrade();
+	void	signForm(Form &f);
 
 	Bureaucrat();
 	Bureaucrat(std::string, int);

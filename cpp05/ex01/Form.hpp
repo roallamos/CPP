@@ -6,14 +6,16 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:21:08 by rodralva          #+#    #+#             */
-/*   Updated: 2025/01/20 19:52:27 by rodralva         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:43:04 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 # define FORM_HPP
 
-#include <iostream>
+# include <iostream>
+
+class Bureaucrat;
 
 class Form
 {
@@ -37,10 +39,12 @@ public:
 			}
 	};
 
-	std::string const	getName() const;
-	bool				getSignature() const;
-	int const			getSignatureGrade() const;
-	int const			getExecGrade() const;
+	std::string	getName() const;
+	bool		getSignature() const;
+	int			getSignatureGrade() const;
+	int			getExecGrade() const;
+
+	void	beSigned(Bureaucrat);
 
 	Form();
 	Form(const Form &);

@@ -6,13 +6,14 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:20:46 by rodralva          #+#    #+#             */
-/*   Updated: 2025/01/20 19:54:33 by rodralva         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:43:36 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
-std::string const	Form::getName() const
+std::string	Form::getName() const
 {
 	return (this->_name);
 }
@@ -22,12 +23,12 @@ bool	Form::getSignature() const
 	return (this->_signature);
 }
 
-int const	Form::getSignatureGrade() const
+int	Form::getSignatureGrade() const
 {
 	return (this->_signature_grade);
 }
 
-int const	Form::getExecGrade() const
+int	Form::getExecGrade() const
 {
 	return (this->_exec_grade);
 }
@@ -66,5 +67,17 @@ Form::~Form()
 
 std::ostream &operator<<(std::ostream &out, const Form &to_print)
 {
-	out << to_print.getName() << "\n";
+	out << "Form name: "<< to_print.getName() << "\n"
+		<< "Signed: "<< to_print.getSignature() << "\n"
+		<< "Signature grade needed: "<< to_print.getSignatureGrade() << "\n"
+		<< "Execution grade needed: "<< to_print.getExecGrade() << "\n";
+	return (out);
+}
+
+void	Form::beSigned(Bureaucrat bur)
+{
+	if (bur.getGrade() <= this->getSignatureGrade())
+		this->_signature = true;
+	else
+		throw GradeTooLowException();
 }

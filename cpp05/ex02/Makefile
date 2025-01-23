@@ -8,7 +8,7 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 ARFLAGS  = -rcs
 
-SOURCES = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
+SOURCES = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
 

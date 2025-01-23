@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 13:11:56 by rodralva          #+#    #+#             */
-/*   Updated: 2025/01/21 16:08:44 by rodralva         ###   ########.fr       */
+/*   Updated: 2025/01/23 15:10:07 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ public:
 	void	increaseGrade();
 	void	decreaseGrade();
 	void	signForm(AForm &f);
+	void	executeForm(AForm const &f);
 
 	Bureaucrat();
 	Bureaucrat(std::string, int);

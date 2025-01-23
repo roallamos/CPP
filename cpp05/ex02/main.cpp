@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:55:30 by rodralva          #+#    #+#             */
-/*   Updated: 2025/01/23 15:07:17 by rodralva         ###   ########.fr       */
+/*   Updated: 2025/01/23 15:12:35 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
 		Bureaucrat	b("b", 1);
 		b.signForm(perro);
 		std::cout << perro;
-		perro.execute(b);
+		b.executeForm(perro);
 	}
 	catch(const std::exception& e)
 	{
@@ -36,7 +36,7 @@ int main()
 		Bureaucrat	b("b", 50);
 		b.signForm(perro);
 		std::cout << perro;
-		perro.execute(b);
+		b.executeForm(perro);
 	}
 	catch(const std::exception& e)
 	{
@@ -48,7 +48,7 @@ int main()
 		Bureaucrat	b("b", 1);
 		b.signForm(perro);
 		std::cout << perro;
-		perro.execute(b);
+		b.executeForm(perro);
 	}
 	catch(const std::exception& e)
 	{

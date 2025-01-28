@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:55:30 by rodralva          #+#    #+#             */
-/*   Updated: 2025/01/23 15:12:35 by rodralva         ###   ########.fr       */
+/*   Updated: 2025/01/28 16:04:59 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@ int main()
 	try
 	{
 		ShrubberyCreationForm	perro("arbol");
-		Bureaucrat	b("b", 1);
+		Bureaucrat	b("b", 50);
 		b.signForm(perro);
 		std::cout << perro;
 		b.executeForm(perro);
+		std::cout << "\n\n\n";
 	}
 	catch(const std::exception& e)
 	{
@@ -37,6 +38,7 @@ int main()
 		b.signForm(perro);
 		std::cout << perro;
 		b.executeForm(perro);
+		std::cout << "\n\n\n";
 	}
 	catch(const std::exception& e)
 	{
@@ -45,10 +47,11 @@ int main()
 	try
 	{
 		PresidentialPardonForm	perro("evil_man");
-		Bureaucrat	b("b", 1);
+		Bureaucrat	b("b", 50);
 		b.signForm(perro);
 		std::cout << perro;
 		b.executeForm(perro);
+		std::cout << "\n\n\n";
 	}
 	catch(const std::exception& e)
 	{

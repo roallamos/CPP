@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:21:08 by rodralva          #+#    #+#             */
-/*   Updated: 2025/01/21 19:27:03 by rodralva         ###   ########.fr       */
+/*   Updated: 2025/01/28 15:57:56 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,13 @@ public:
 		public:
 			const char* what() const throw(){
 				return ("Grade too low\n");
+			}
+	};
+
+	class NotSignedForm: public std::exception {
+		public:
+			const char* what() const throw(){
+				return ("Form has no signature\n");
 			}
 	};
 

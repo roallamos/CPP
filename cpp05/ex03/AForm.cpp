@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:20:46 by rodralva          #+#    #+#             */
-/*   Updated: 2025/01/21 19:28:29 by rodralva         ###   ########.fr       */
+/*   Updated: 2025/01/28 16:02:50 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	AForm::execute(Bureaucrat const &executor) const
 	if (!this->getSignature())
 	{
 		std::cout << "Form is not signed\n";
-		return ;
+		throw NotSignedForm();
 	}
 	if (executor.getGrade() > this->getExecGrade())
 		throw GradeTooLowException();

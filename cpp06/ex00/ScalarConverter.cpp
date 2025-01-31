@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 18:22:06 by rodralva          #+#    #+#             */
-/*   Updated: 2025/01/31 19:47:59 by rodralva         ###   ########.fr       */
+/*   Updated: 2025/01/31 19:59:17 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_literaltok
 	int has_char;
 	int has_nb;
 	int has_space;
+	int	length;
 }	t_literaltok;
 
 typedef struct s_cast
@@ -36,10 +37,9 @@ typedef struct s_cast
 void	countTokens(t_literaltok *l, std::string literal)
 {
 	int i = 0;
-	int	length;
 
-	length = literal.length();
-	while (i < length)
+	l->length = literal.length();
+	while (i < l->length)
 	{
 		if (literal.at(i) >= '0' && literal.at(i) <= '9')
 			l->has_nb++;
@@ -47,9 +47,9 @@ void	countTokens(t_literaltok *l, std::string literal)
 			l->has_dot++;
 		else if (literal.at(i) == 'f' && l->has_dot && l->has_nb)
 			l->has_f++;
-		else if ((literal.at(i) == '+' || literal.at(i) == '-') && length != 1)
+		else if ((literal.at(i) == '+' || literal.at(i) == '-') && l->length != 1 && i == 0)
 			l->has_sing++;
-		else if (length != 1 && literal.at(i) == ' ')
+		else if (l->length != 1 && literal.at(i) == ' ')
 			l->has_space++;
 		else
 			l->has_char++;
@@ -68,7 +68,7 @@ bool	parse(std::string literal, t_cast *cast, t_literaltok l)
 		cast->i = 0;
 		return (1);
 	}
-	else if (l.has_space && literal.length() > 1)
+	else if ((l.has_space && literal.length() > 1) || (l.has_char && l.length > 1))
 		return (0);
 	else if (l.has_dot <= 1 && l.has_f <= 1 && l.has_sing <= 1 && l.has_char <= 1)
 	{

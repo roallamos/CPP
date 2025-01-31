@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 17:57:43 by rodralva          #+#    #+#             */
-/*   Updated: 2025/01/29 19:02:40 by rodralva         ###   ########.fr       */
+/*   Updated: 2025/01/31 15:20:36 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <iostream>
 # include <string.h>
 # include <stdlib.h>
+# include <iomanip>
+# include <cstdlib>
 
 class ScalarConverter
 {

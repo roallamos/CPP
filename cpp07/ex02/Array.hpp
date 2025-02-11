@@ -59,6 +59,14 @@ public:
 		return (this->ptr[i]);
 	}
 
+	int	size()
+	{
+		int i;
+		for (i = 0; ptr[i]; i++)
+			i++;
+		return (i);
+	}
+
 	class BadAccess : public std::exception{
 		public:
 			virtual const char * what() const throw()
